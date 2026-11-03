@@ -1,0 +1,40 @@
+# Software for Single_Cell_Master_Guide.md, pinned to the versions the guide was tested with (31 Oct 2026).
+# Create it once:   conda env create -f environment.yml
+# Then every time:  conda activate scanalysis
+name: scanalysis
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - scanpy[leiden]==1.11.5      # core toolkit (+ igraph / leidenalg for clustering)
+      - anndata==0.12.19
+      - numpy==2.4.6
+      - scipy==1.17.1
+      - pandas==2.3.3
+      - scikit-learn==1.9.1
+      - umap-learn==0.5.12
+      - pynndescent==0.6.0          # 0.7 breaks scanpy 1.11.5's neighbour graph on > 8,192 cells
+      - igraph==1.0.0
+      - leidenalg==0.12.0
+      - scikit-misc==0.5.3          # Seurat-v3 highly variable genes
+      - scikit-image==0.26.0        # Scrublet's automatic doublet threshold
+      - harmonypy==2.1.0            # batch correction
+      - pydeseq2==0.5.4             # pseudobulk differential expression
+      - decoupler==2.2.0            # pathway / transcription-factor activity
+      - celltypist==1.7.1           # automatic cell-type labels (optional step)
+      - liana==1.10.0               # cell-cell communication (optional step)
+      - loompy==3.0.8               # reading .loom files
+      - matplotlib==3.11.2
+      - seaborn==0.13.2
+      - jupyterlab==4.6.5
+      - ipykernel==7.4.0
+      # Optional extras used only by the "untested here" blocks - install when you need them:
+      # - scvi-tools    # scVI integration (Section 19.6)
+      # - scvelo        # RNA velocity (19.3)
+      # - infercnvpy    # tumour copy-number inference (19.5)
+      # - squidpy       # spatial (20.4)
+      # - snapatac2     # scATAC (20.3)
+      # - scirpy        # TCR/BCR (20.6)
+      # - muon          # multimodal (20.2)
