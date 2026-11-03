@@ -1,4 +1,4 @@
-# Single-Cell Analysis by Ali
+# Single-Cell Analysis by Dr Ali
 
 A universal, tested, step-by-step guide to single-cell RNA-seq analysis, from a count matrix to annotated cell
 types, differential expression, pathways and a ready-to-edit methods paragraph. It comes in two versions with
